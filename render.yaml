@@ -6,7 +6,7 @@ services:
     startCommand: cd api && npm start
     envVars:
       - key: MONGO_URI
-        value: acebook-watermelon
+        value: acebook
 
   - type: static-site
     name: frontend-service
