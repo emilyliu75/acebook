@@ -11,7 +11,7 @@ const createToken = async (req, res) => {
     console.log("Auth Error: User not found");
     res.status(401).json({ message: "User not found" });
   } else {
-    const comparePassword = bcrypt.compare(password, user.password).then((result) => { return result; });
+    await bcrypt.compare(password, user.password).then((result) => { comparePassword = result; });
     
     if (!comparePassword) {
       console.log("Auth Error: Passwords do not match");
